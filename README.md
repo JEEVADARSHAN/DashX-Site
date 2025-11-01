@@ -64,12 +64,10 @@ The site automatically reloads when you make changes.
 
 ## 📄 License
 
-This project is **MIT Licensed** – see the [LICENSE](LICENSE) file for details.
+This project is **MIT Licensed** – see the [LICENSE](https://github.com/JEEVADARSHAN/DashX-Site/blob/main/LICENSE) file for details.
 
 ---
 
 ## 🌐 Learn More
 
-Visit the [official DashX site](link-to-your-live-site) to download the extension and explore features.
-
-```
+Visit the [official DashX site](https://dashx-app.vercel.app/) to download the extension and explore features.
