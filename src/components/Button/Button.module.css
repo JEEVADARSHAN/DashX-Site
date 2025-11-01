@@ -1,0 +1,35 @@
+.button {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    background-size: 200% 100%;
+    background-position: left;
+    color: var(--bg-color);
+    border: none;
+    outline: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    user-select: none;
+    box-shadow: 0 4px 12px rgba(0, 207, 255, 0.3);
+}
+
+    .button:hover {
+        color: #0b0f16;
+        background-position: right; /* shift gradient on hover */
+        transform: scale(1.05); /* optional zoom effect */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:active {
+        transform: translateY(0);
+        box-shadow: 0 3px 8px rgba(0, 207, 255, 0.3); /* pressed effect */
+    }
+
+    .button:focus {
+        outline: 2px solid #00cfff;
+        outline-offset: 2px;
+    }

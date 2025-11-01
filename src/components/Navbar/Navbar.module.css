@@ -1,0 +1,46 @@
+.navbar {
+    position: sticky;
+    height: 50px;
+    top: 0;
+    max-width: calc(100% - 4rem);
+    z-index: 10;
+    padding: 0.25rem 2rem;
+    background: #12192290;
+    margin: 1rem 2rem;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 18px );
+    -webkit-backdrop-filter: blur( 18px );
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    border-radius: 30px;
+    transition: all .3s ease-in-out;
+}
+
+.navLink {
+    color: var(--text-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+    .navLink:hover {
+        color: var(--btn-bg);
+    }
+
+    .navLink.active {
+        color: var(--btn-bg);
+        font-weight: 700;
+    }
+
+    .logo{
+        height: 40px;
+        cursor: pointer;
+        box-shadow: none;
+    }
+
+    ul{
+        list-style: none;
+        display:flex;
+        gap: 1.5rem;
+        margin:0;
+        padding:0;
+    }

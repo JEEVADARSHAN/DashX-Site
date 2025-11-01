@@ -1,0 +1,157 @@
+:root {
+    --bg-color: #0b0f16;
+    --text-color: #c7d1db;
+    --accent-color: #00cfff;
+    --accent-color-dark: #008ba3;
+    --nav-bg: #121922;
+    --footer-bg: #121922;
+    --btn-bg: #00cfff;
+    --btn-hover-bg: #008ba3;
+    --link-color: #00cfff;
+    --border-color: #1f2937;
+    --shadow-color: rgba(0, 207, 255, 0.3);
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    a:hover,
+    a:focus {
+        color: var(--accent-color-dark);
+        outline: none;
+    }
+
+/* Image styles */
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 8px var(--shadow-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color-dark);
+    border-radius: 10px;
+    border: 2px solid var(--bg-color);
+}
+
+
+.fScontainer{
+    width: 100%;
+    min-height: calc(100vh - 100px - 2rem);
+    align-content: center;
+}
+
+.midSpaceContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    max-width: 50vw;
+    margin-right: 1rem;
+    animation: fadeup 1s ease-in-out;
+    order: 0;
+}
+
+.right {
+    max-width: 50vw;
+    margin-left: 1rem;
+    animation: fadeup 1s ease-in-out;
+    order: 1;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+
+.card {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid #ffffff2e;
+    box-shadow: 0 8px 32px 0 #1f26875e;
+    background: #ffffff15;
+    padding: 16px;
+    z-index: 10;
+}
+
+.border {
+    padding:12px;
+    border: 1px solid #ffffff2e;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.center{
+    display: flex;
+    width: 100%;
+    justify-content:center;
+}
+
+.center a{
+    width: 40vw;
+}
+
+
+
+/* Glow class for logo and accents */
+
+.glow {
+    font-size: 2.8rem;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+

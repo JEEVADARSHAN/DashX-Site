@@ -1,0 +1,45 @@
+.heroLogo {
+    width: 80px;
+    object-fit: contain;
+    box-shadow: none;
+    animation-delay: 0.5s;
+}
+
+.heroImg {
+    max-width: 50vw;
+    object-fit: contain;
+    box-shadow: none;
+}
+
+.featuresSummary {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.featureCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.featureCard {
+    background-color: var(--nav-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1 1 280px;
+    box-shadow: 0 0 12px var(--accent-color-dark);
+    color: var(--text-color);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    animation: global(fadeup) 1s ease-in-out forwards;
+}
+
+    .featureCard:hover {
+        transform: scale(1.05);
+    }
+
+
