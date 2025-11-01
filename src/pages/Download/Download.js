@@ -1,10 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Download.module.css';
 import { download } from '../../utils/images';
-import { Button, Row, Column, Carousel } from '../../components';
+import { Button } from '../../components';
 
 const Download = () => {
     const [activeTab, setActiveTab] = useState('chrome');
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Detect mobile devices
+    useEffect(() => {        // Set page title
+        document.title = "Download DashX - Chrome, Firefox, Edge Extension";
+
+        // Set meta description
+        const descriptionTag = document.querySelector('meta[name="description"]');
+        if (descriptionTag) {
+            descriptionTag.setAttribute('content', 'Download and install DashX on Chrome, Firefox, or Edge. Follow easy steps to get started.');
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'description';
+            meta.content = 'Download and install DashX on Chrome, Firefox, or Edge. Follow easy steps to get started.';
+            document.head.appendChild(meta);
+        }
+
+        // Optionally add Open Graph tags for social sharing
+        const ogTitleTag = document.querySelector('meta[property="og:title"]');
+        if (!ogTitleTag) {
+            const metaOG = document.createElement('meta');
+            metaOG.setAttribute('property', 'og:title');
+            metaOG.content = 'Download DashX - Browser Extension';
+            document.head.appendChild(metaOG);
+        }
+
+        const ogDescTag = document.querySelector('meta[property="og:description"]');
+        if (!ogDescTag) {
+            const metaOGDesc = document.createElement('meta');
+            metaOGDesc.setAttribute('property', 'og:description');
+            metaOGDesc.content = 'Install DashX on Chrome, Firefox, or Edge with easy steps.';
+            document.head.appendChild(metaOGDesc);
+        }
+
+        // Cleanup (optional)
+        return () => {
+            // Reset title if needed when navigating away
+            document.title = "Your Default App Title";
+        };
+
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const tabInfo = {
         chrome: {
@@ -57,7 +104,7 @@ const Download = () => {
             <h1 className="glow textCenter">
                 Download & Install DashX
             </h1>
-            <br/>
+            <br />
             <div className={styles.blob}></div>
 
             <div className="card">
@@ -79,7 +126,7 @@ const Download = () => {
                     <div className={styles.downloadContent}>
                         <div className={styles.downloadText}>
                             <h2 style={{ color: 'var(--btn-bg)', marginBottom: '1rem' }}>{title}</h2>
-                            <ol style={{ paddingLeft:'40px' }}>
+                            <ol style={{ paddingLeft: '40px' }}>
                                 {steps.map((step, idx) => (
                                     <li key={idx} style={{ marginBottom: '0.8rem' }}>{step}</li>
                                 ))}
@@ -104,12 +151,26 @@ const Download = () => {
                     </div>
                 </div>
             </div>
-            <br/>
-            <div className="center card">
-                <Button href="https://github.com/JEEVADARSHAN/DashX/releases/latest/download/DashX.zip" download>
-                    Download ZIP
-                </Button>
-            </div>
+
+            <br />
+
+            {/* Only show download button if not mobile */}
+            {!isMobile && (
+                <div className="center card">
+                    <Button href="https://github.com/JEEVADARSHAN/DashX/releases/latest/download/DashX.zip" download>
+                        Download ZIP
+                    </Button>
+                </div>
+            )}
+
+            {isMobile && (
+                <div className="center card">
+                    <p style={{ textAlign: 'center', color: 'var(--text-color)', marginTop: '1rem' }}>
+                        DashX cannot be installed on mobile browsers. Please use a desktop browser to download.
+                    </p>
+                </div>
+            )}
+
             <p style={{ marginTop: '2rem', textAlign: 'center' }}>
                 If you face any issues, visit our <a href="/faq">FAQ</a> or <a href="/contact">Contact</a> us for help.
             </p>

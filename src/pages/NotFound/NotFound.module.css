@@ -1,0 +1,35 @@
+.notFound {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+    .notFound h1 {
+        font-size: 8rem;
+        color: var(--btn-bg);
+    }
+
+    .notFound h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .notFound p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+.homeBtn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--btn-bg);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+    .homeBtn:hover {
+        opacity: 0.8;
+        color: white;
+    }

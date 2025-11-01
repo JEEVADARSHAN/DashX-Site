@@ -30,6 +30,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* Headings */
@@ -82,6 +83,7 @@ img {
 
 .midSpaceContainer {
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,3 +157,14 @@ img {
     animation: glowPulse 3s ease-in-out infinite;
 }
 
+@media screen and (max-width: 768px) {
+    :has(> .left):has(> .right) {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px;
+    }
+    .left, .right{
+        margin:0;
+        max-width:100%;
+    }
+}

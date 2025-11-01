@@ -1,0 +1,75 @@
+/* CookieConsent.module.css */
+
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #222;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.5s all ease;
+}
+
+/* Accept button */
+.accept {
+    background-color: #00cfff;
+    color: #0b0f16;
+    border: none;
+}
+
+.accept:hover {
+    background-color: #00a3cc;
+    color: #fff;
+}
+
+/* Decline button */
+.decline {
+    background-color: #0b0f16;
+    border: 2px solid #00cfff;
+    color: white;
+}
+
+.decline:hover {
+    background-color: #00cfff;
+    border-color: #00cfff;
+    color: #0b0f16;
+}
+
+/* Privacy Settings button */
+.settingsButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 9;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import CookieConsent from './components/Cookies/Cookies';
 
 import Home from './pages/Home/Home';
 import Features from './pages/Features/Features';
@@ -11,6 +12,7 @@ import About from './pages/About/About';
 import Privacy from './pages/Privacy/Privacy';
 import FAQ from './pages/FAQ/FAQ';
 import Contact from './pages/Contact/Contact';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -26,8 +28,10 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+        <CookieConsent />
         <Footer />
       </div>
     </Router>

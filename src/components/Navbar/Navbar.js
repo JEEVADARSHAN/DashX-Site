@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/dashX_plain.png';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     const navLinks = [
         ['/', 'Home'],
         ['/features', 'Features'],
@@ -20,7 +22,20 @@ const Navbar = () => {
                 <NavLink to="/">
                     <img src={logo} alt="DashX Logo" className={styles.logo} />
                 </NavLink>
-                <ul>
+
+                {/* Hamburger Button */}
+                <button
+                    className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle Menu"
+                >
+                    <span className={styles.bar}></span>
+                    <span className={styles.bar}></span>
+                    <span className={styles.bar}></span>
+                </button>
+
+                {/* Navigation Links */}
+                <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
                     {navLinks.map(([path, label]) => (
                         <li key={label}>
                             <NavLink
@@ -30,6 +45,7 @@ const Navbar = () => {
                                         ? `${styles.navLink} ${styles.active}`
                                         : styles.navLink
                                 }
+                                onClick={() => setIsOpen(false)} // Close menu on click
                             >
                                 {label}
                             </NavLink>
