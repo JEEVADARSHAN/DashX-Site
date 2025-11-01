@@ -9,7 +9,7 @@ const Download = () => {
 
     // Detect mobile devices
     useEffect(() => {        // Set page title
-        document.title = "Download DashX - Chrome, Firefox, Edge Extension";
+        document.title = "Download Now";
 
         // Set meta description
         const descriptionTag = document.querySelector('meta[name="description"]');
@@ -42,7 +42,7 @@ const Download = () => {
         // Cleanup (optional)
         return () => {
             // Reset title if needed when navigating away
-            document.title = "Your Default App Title";
+            document.title = "DashX - Customize Your New Tab, Boost Productivity";
         };
 
         const checkMobile = () => {
