@@ -18,7 +18,7 @@ import NotFound from './pages/NotFound/NotFound';
 function App() {
     return (
         <Router>
-            <ScrollToTop />   {/* <<< Add this */}
+            <ScrollToTop />
             <div className="app">
                 <Navbar />
                 <main className="main-content">
